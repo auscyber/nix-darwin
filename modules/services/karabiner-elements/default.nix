@@ -9,7 +9,6 @@ with lib;
 
 let
   cfg = config.services.karabiner-elements;
-
 in
 
 {
@@ -71,7 +70,7 @@ in
       script = ''
         rm -rf /run/wrappers
         mkdir -p /run/wrappers/bin
-        install -m4555 "${package}/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_session_monitor" /run/wrappers/bin
+        install -m4555 "${cfg.package}/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_session_monitor" /run/wrappers/bin
       '';
       serviceConfig.RunAtLoad = true;
       serviceConfig.KeepAlive.SuccessfulExit = false;
