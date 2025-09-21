@@ -11,6 +11,7 @@ let
   parentAppDir = "/Applications/Nix Apps";
 in
 {
+  meta.maintainers = [ lib.maintainers.auscyber or "auscyber" ];
   options.services.karabiner-dk = {
     enable = mkEnableOption "Karabiner-DK";
     package = mkPackageOption pkgs "karabiner-dk" { };
