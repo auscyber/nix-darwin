@@ -11,6 +11,7 @@ let
   parentAppDir = "/Applications/Nix Apps";
 in
 {
+  meta.maintainers = [ lib.maintainers.auscyber or "auscyber" ];
   options.services.karabiner-dk = {
     enable = mkEnableOption "Karabiner-DK";
     package = mkPackageOption pkgs "karabiner-dk" { };
@@ -41,7 +42,7 @@ in
         "activate"
       ];
       serviceConfig.RunAtLoad = true;
-      managedBy = "auscybernix.keybinds.karabiner-driver-kit.enable";
+      managedBy = "services.karabiner-dk.enable";
     };
     system.activationScripts.postActivation.text = ''
       		launchctl kickstart -k system/org.pqrs.Karabiner-DriverKit-VirtualHIDDevice-Daemon
