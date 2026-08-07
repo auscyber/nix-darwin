@@ -21,7 +21,7 @@ with lib;
       description = ''
         Apple menu > System Settings > Lock Screen
 
-        Hides the username and photo on the login/lock screen, showing only a password prompt. Default is false.
+        Hides the username and photo on the login screen, showing only a password prompt. Default is false.
       '';
     };
 
